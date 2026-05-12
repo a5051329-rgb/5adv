@@ -31,7 +31,7 @@
     }
 
     .a4 {
-      width: 210mm;
+      width: calc(210mm + 30px);
       min-height: 297mm;
       margin: 24px auto;
       padding: 18mm 16mm;
@@ -193,8 +193,15 @@
     .green { background: #eaf8f2; }
     .purple { background: #f2edff; }
 
+    .benefit-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
     .benefit h3 {
-      margin: 0 0 7px;
+      margin: 0;
       font-size: 18px;
       line-height: 1.35;
       color: #2f2f2f;
@@ -213,8 +220,70 @@
       color: #5f5f5f;
     }
 
-    .benefit li {
+        .benefit li {
       margin-bottom: 4px;
+    }
+
+    details.accordion {
+      margin-top: 10px;
+      border: 1px solid #f1d6bc;
+      border-radius: 14px;
+      background: #fffaf4;
+      overflow: hidden;
+    }
+
+    details.accordion summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #a55216;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    details.accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .accordion-content {
+      padding: 0 14px 12px;
+      font-size: 13px;
+      color: #5f5f5f;
+      border-top: 1px solid #f3dfcc;
+      background: #fff;
+      overflow-x: auto;
+    }
+
+    .accordion-content table {
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    .accordion-content th,
+    .accordion-content td {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      vertical-align: top;
+    }
+
+    .accordion-content th:first-child,
+    .accordion-content td:first-child {
+      width: 22%;
+    }
+
+    .accordion-content th:nth-child(2),
+    .accordion-content td:nth-child(2),
+    .accordion-content th:nth-child(3),
+    .accordion-content td:nth-child(3) {
+      width: 39%;
+    }
+
+    .accordion-content ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
     }
 
     .tags {
@@ -228,11 +297,11 @@
       display: inline-flex;
       padding: 4px 8px;
       border-radius: 999px;
-      background: #fff8ec;
-      border: 1px solid #f1d6bc;
+      background: #eef6ff;
+      border: 1px solid #cfe3f8;
       font-size: 11.5px;
       font-weight: 700;
-      color: #a55216;
+      color: #3c6fa6;
     }
 
     .summary {
@@ -326,16 +395,160 @@
       <article class="benefit wide">
         <div class="icon orange">🎁</div>
         <div>
-          <h3>1. 巧虎育兒資訊網</h3>
+          <div class="benefit-header">
+            <h3>1. 巧虎育兒資訊網（暫定名稱）</h3>
+          </div>
           <ul>
-            <li>定位為育兒知識及工具型網頁，著重家長關心的育兒痛點，陳列 0–12M 各月齡成長重點與內容，並提供家長各月齡相關成長主題的免費禮物。</li>
-            <li>
-              <strong>流程：</strong>
-              選擇月齡 → 查看成長重點 → 點擊領取禮物 → 跳轉 LINE 完成綁定 → 領取月齡禮物
-            </li>
+            <li>定位為巧連智的育兒知識及工具型網頁，以月齡為核心整理 0–12M 成長重點、育兒痛點與互動內容，家長可隨孩子成長持續回訪網站，查看現階段資訊並領取該月齡禮物。</li>
+            <li><strong>核心綁定動機：</strong>家長可依孩子月齡，免費領取對應階段的實用工具型禮物（非實體），但需先完成 LINE 會員綁定後才能領取，同時可持續獲得月齡陪伴、生日小禮、會員活動與專屬優惠等其他會員好處。</li>
+            <li><strong>流程：</strong>選擇月齡 → 查看成長重點 → 點擊領取禮物 → 跳轉 LINE 完成綁定 → 領取月齡禮物</li>
             <li>禮物包含黑白圖卡、顏色圖卡、相關主題巧虎卡通播放清單等無成本電子檔。</li>
             <li>此頁目前仍在製作中。</li>
           </ul>
+
+          <details class="accordion" open>
+            <summary>客戶來這個網站的目的是什麼？ <span>＋</span></summary>
+            <div class="accordion-content">
+              <ul>
+                <li>家長在孩子剛出生時是最需要被指引及陪伴的階段，而現在網路上最大的問題是<strong>資訊太多</strong>，新手爸媽往往需要自行搜尋與整理。</li>
+                <li>巧虎育兒資訊網則透過<strong>陪伴型內容</strong>、<strong>互動設計</strong>與<strong>月齡導向資訊</strong>，幫助家長能方便且快速理解孩子現階段發展狀態，降低育兒焦慮感。</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="accordion">
+            <summary>巧虎育兒資訊網和 BabyMine 有何不同？ <span>＋</span></summary>
+            <div class="accordion-content">
+              <table style="width:100%; border-collapse: collapse; margin-top:10px; font-size:12.5px;">
+                <thead>
+                  <tr style="background:#fff3e8; color:#a55216;">
+                    <th style="padding:8px; border:1px solid #f1d6bc;">比較項目</th>
+                    <th style="padding:8px; border:1px solid #f1d6bc;">巧虎育兒資訊網</th>
+                    <th style="padding:8px; border:1px solid #f1d6bc;">BabyMine</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">核心定位</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">BCL 蒐集入口／育兒陪伴入口</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">育兒紀錄工具</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">主要目的</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">快速理解現在月齡需要什麼，並提高綁定意願</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">記錄孩子成長狀況</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">內容方向</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">月齡內容、育兒陪伴與工具型互動內容</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">從孕期開始的育兒資訊、成長紀錄與管理功能，資訊型態偏文章內容</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">情感定位</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">強調「巧虎陪著一起育兒」的陪伴感</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">偏向功能型工具</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">目標客群</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">0–12M 新生兒家庭</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">孕期起至出生後的家長</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+
+          <details class="accordion">
+            <summary>和其他育兒資訊網站的差異特色是什麼？ <span>＋</span></summary>
+            <div class="accordion-content">
+              <table style="width:100%; border-collapse: collapse; margin-top:10px; font-size:12.5px;">
+                <thead>
+                  <tr style="background:#fff3e8; color:#a55216;">
+                    <th style="padding:8px; border:1px solid #f1d6bc;">比較項目</th>
+                    <th style="padding:8px; border:1px solid #f1d6bc;">巧虎育兒資訊網</th>
+                    <th style="padding:8px; border:1px solid #f1d6bc;">一般育兒網站</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">內容入口</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">以月齡作為入口</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">以文章搜尋為主</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">資訊呈現</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">幫家長整理目前最重要的內容，降低資訊過載感</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">資訊量大、需自行整理</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">互動體驗</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">透過月齡選擇與互動設計提升互動感，而非單純閱讀文章</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">多以長篇文章閱讀為主</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">情感定位</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">強調「巧虎陪著一起育兒」的陪伴感</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">偏向知識型內容網站</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">品牌特色</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">結合巧虎角色、會員機制與 LINE 綁定流程</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">多以文章資訊為主</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+
+          <details class="accordion">
+            <summary>這個網站和每週五晚上的「0–12M 月齡溝通企劃」之間的關係是？ <span>＋</span></summary>
+            <div class="accordion-content">
+              <table style="width:100%; border-collapse: collapse; margin-top:10px; font-size:12.5px;">
+                <thead>
+                  <tr style="background:#fff3e8; color:#a55216;">
+                    <th style="padding:8px; border:1px solid #f1d6bc;">項目</th>
+                    <th style="padding:8px; border:1px solid #f1d6bc;">巧虎育兒資訊網</th>
+                    <th style="padding:8px; border:1px solid #f1d6bc;">0–12M 月齡溝通企劃</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">功能定位</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">提高新客綁定意願與 BCL 蒐集效率</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">提高會員留存與互動</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">使用時機</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">0–12M 育兒階段有需求時，可持續回訪使用</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">完成綁定後的長期陪伴</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">內容形式</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">育兒工具型網站／互動內容／較完整的月齡資訊</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">每週五固定推播內容／精簡摘要型內容</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">角色定位</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">BCL 蒐集入口／對客戶有利的育兒工具</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">會員陪伴機制</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">商品角色</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">現階段不直接牽涉巧連智商品推薦</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">會透過 Landing Page 自然導入商品推薦</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:8px; border:1px solid #f1d6bc; font-weight:700;">內容關係</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">提供較完整的月齡內容與延伸資訊，可作為推播內容的延伸閱讀</td>
+                    <td style="padding:8px; border:1px solid #f1d6bc;">作為 LINE 推播的精簡版內容與導流入口</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div style="margin-top:12px; padding:10px 12px; background:#fff8ef; border:1px solid #f1d6bc; border-radius:12px; font-size:12.5px; color:#6a5a4d;">
+                從【0–12M 月齡溝通企劃】已經找到開封率、點擊率較佳的主題，代表較能命中家長痛點，例如：2M 開始有半夜不睡覺的困擾、4M 開始學翻身、5M 家長開始關心頭型；網站可針對這些主題加強延伸內容與互動設計。
+              </div>
+            </div>
+          </details>
           <div class="tags">
             <span class="tag">實用育兒資訊</span>
             <span class="tag">育兒工具型內容</span>
@@ -344,11 +557,13 @@
       </article>
 
       <article class="benefit">
-        <div class="icon blue">🍼</div>
-        <h3>2. 0–12M 月齡溝通企劃</h3>
+        <div class="benefit-header">
+          <div class="icon blue">🍼</div>
+          <h3>2. 0–12M 月齡溝通企劃</h3>
+        </div>
         <ul>
           <li>會員每週五晚上 10 點收到月齡陪伴內容，包含成長重點、育兒提醒與親子互動建議。</li>
-          <li>雙周會透過目前製作中的 Landing Page，自然帶入適合該階段的商品推薦。</li>
+          <li>雙周會透過 Landing Page，自然帶入適合該階段的商品推薦。</li>
         </ul>
         <div class="tags">
           <span class="tag">每週五推播</span>
@@ -359,8 +574,10 @@
       </article>
 
       <article class="benefit">
-        <div class="icon pink">🎂</div>
-        <h3>3. 寶寶生日專屬小禮</h3>
+        <div class="benefit-header">
+          <div class="icon pink">🎂</div>
+          <h3>3. 寶寶生日專屬小禮</h3>
+        </div>
         <ul>
           <li>於寶寶生日或重要成長時刻提供電子小禮，內容可包含生日卡片、著色線稿、拼貼相框、海報等。</li>
           <li>建立「巧虎陪孩子一起長大」的紀念感，此為 CX 計劃處針對生日話題的規劃內容。</li>
@@ -373,8 +590,10 @@
       </article>
 
       <article class="benefit">
-        <div class="icon green">🎲</div>
-        <h3>4. 會員專屬活動（BCL活動）</h3>
+        <div class="benefit-header">
+          <div class="icon green">🎲</div>
+          <h3>4. 會員專屬活動（BCL活動）</h3>
+        </div>
         <ul>
           <li>綁定後會員可不定期參加互動活動，形式包含心理測驗、知識問答、猜謎、問卷調查等。</li>
           <li>參加活動除了可獲得抽獎機會外，活動本身的軟性收穫（父母成長、自我角色認同）也是透過活動希望傳達給家長的內容。</li>
@@ -389,8 +608,10 @@
       </article>
 
       <article class="benefit">
-        <div class="icon purple">🎭</div>
-        <h3>5. 舞台劇與商品專屬優惠</h3>
+        <div class="benefit-header">
+          <div class="icon purple">🎭</div>
+          <h3>5. 舞台劇與商品專屬優惠</h3>
+        </div>
         <ul>
           <li>會員可獲得巧虎舞台劇 88 折優惠、商品優惠資訊與會員限定活動資訊。</li>
           <li>讓會員身份具備實際優惠價值。</li>
